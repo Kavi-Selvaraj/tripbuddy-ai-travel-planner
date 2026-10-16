@@ -1,0 +1,6 @@
+{
+  "name": "TripBuddy — AI Travel Discovery & Planning",
+  "description": "Discover destinations, explore hidden gems, plan personalized itineraries, calculate travel expenses, check destination weather, and collaborate with friends.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
