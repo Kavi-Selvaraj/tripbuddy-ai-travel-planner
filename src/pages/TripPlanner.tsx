@@ -25,6 +25,7 @@ import { DESTINATIONS } from '../data/destinations';
 import { TravelStyle, TripPlan, DayItinerary, ActivityItem } from '../types';
 import { generateStructuredItinerary, formatItineraryForClipboard } from '../utils/itineraryGenerator';
 import { useTravel } from '../context/TravelContext';
+import { ImageWithFallback } from '../components/ImageWithFallback';
 
 const TRAVEL_STYLES: TravelStyle[] = [
   'Relaxation',
@@ -492,25 +493,41 @@ export const TripPlanner: React.FC = () => {
             
             {/* Top Itinerary Dashboard Header */}
             <div className="bg-white border border-[#EAE5DC] rounded-2xl p-6 shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-              <div>
-                <div className="flex items-center gap-2 text-xs text-[#64748B] mb-1">
-                  <span>From {plan.startingCity}</span>
-                  <span>·</span>
-                  <span>{plan.daysCount} Days</span>
-                  <span>·</span>
-                  <span>{plan.travellersCount} {plan.travellersCount === 1 ? 'Traveller' : 'Travellers'}</span>
-                  <span>·</span>
-                  <span>{plan.travelStyle}</span>
-                </div>
-                <h2 className="text-2xl font-bold font-display text-[#1E2923]">
-                  {plan.tripTitle}
-                </h2>
-                <div className="flex items-center gap-4 text-xs mt-2">
-                  <span className="text-[#64748B]">Allocated Target: <strong className="text-[#1E2923] tabular-nums">₹{plan.totalBudget.toLocaleString('en-IN')}</strong></span>
-                  <span>·</span>
-                  <span className="text-[#64748B]">Estimated Total: <strong className={`tabular-nums ${isOverBudget ? 'text-rose-600' : 'text-[#1E4D3A]'}`}>₹{totalCalculatedCost.toLocaleString('en-IN')}</strong></span>
-                  <span>·</span>
-                  <span className="text-[#64748B]">Per Person: <strong className="text-[#1E2923] tabular-nums">₹{Math.round(totalCalculatedCost / plan.travellersCount).toLocaleString('en-IN')}</strong></span>
+              <div className="flex items-center gap-4">
+                {(() => {
+                  const planDest = DESTINATIONS.find(d => d.id === plan.destinationId);
+                  if (!planDest) return null;
+                  return (
+                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden shrink-0 border border-[#EAE5DC] shadow-xs bg-[#EAE5DC]">
+                      <ImageWithFallback
+                        src={planDest.image}
+                        fallbackSrc={planDest.fallbackImage}
+                        alt={planDest.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  );
+                })()}
+                <div>
+                  <div className="flex items-center gap-2 text-xs text-[#64748B] mb-1">
+                    <span>From {plan.startingCity}</span>
+                    <span>·</span>
+                    <span>{plan.daysCount} Days</span>
+                    <span>·</span>
+                    <span>{plan.travellersCount} {plan.travellersCount === 1 ? 'Traveller' : 'Travellers'}</span>
+                    <span>·</span>
+                    <span>{plan.travelStyle}</span>
+                  </div>
+                  <h2 className="text-2xl font-bold font-display text-[#1E2923]">
+                    {plan.tripTitle}
+                  </h2>
+                  <div className="flex items-center gap-4 text-xs mt-2">
+                    <span className="text-[#64748B]">Allocated Target: <strong className="text-[#1E2923] tabular-nums">₹{plan.totalBudget.toLocaleString('en-IN')}</strong></span>
+                    <span>·</span>
+                    <span className="text-[#64748B]">Estimated Total: <strong className={`tabular-nums ${isOverBudget ? 'text-rose-600' : 'text-[#1E4D3A]'}`}>₹{totalCalculatedCost.toLocaleString('en-IN')}</strong></span>
+                    <span>·</span>
+                    <span className="text-[#64748B]">Per Person: <strong className="text-[#1E2923] tabular-nums">₹{Math.round(totalCalculatedCost / plan.travellersCount).toLocaleString('en-IN')}</strong></span>
+                  </div>
                 </div>
               </div>
 

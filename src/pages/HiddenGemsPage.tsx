@@ -94,6 +94,7 @@ export const HiddenGemsPage: React.FC = () => {
               <div className="relative aspect-16/10 rounded-2xl overflow-hidden bg-black/40 border border-[#27503F]">
                 <ImageWithFallback
                   src={randomGem.image}
+                  fallbackSrc={randomGem.fallbackImage}
                   alt={randomGem.name}
                   className="w-full h-full object-cover"
                 />
@@ -209,7 +210,8 @@ export const HiddenGemsPage: React.FC = () => {
               <div className="relative aspect-4/3 overflow-hidden bg-[#EAE5DC]">
                 <ImageWithFallback
                   src={gem.image}
-                  alt={gem.name}
+                  fallbackSrc={gem.fallbackImage}
+                  alt={`${gem.name}, ${gem.state}`}
                   className="w-full h-full object-cover"
                 />
                 <button

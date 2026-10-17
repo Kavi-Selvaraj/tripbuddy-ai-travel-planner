@@ -1,4 +1,5 @@
 import { Destination } from '../types';
+import { DESTINATION_IMAGES, TRAVEL_MOOD_IMAGES } from './destinationImages';
 
 export const DESTINATIONS: Destination[] = [
   {
@@ -8,11 +9,9 @@ export const DESTINATIONS: Destination[] = [
     region: 'South India',
     shortDescription: 'The Scotland of India, famed for mist-covered coffee estates, aromatic spice plantations, and cascading waterfalls.',
     overview: 'Nestled amidst the Western Ghats at an elevation of 1,170 meters, Coorg is a haven of tranquil coffee plantations, Kodava martial hospitality, dense shola forests, and panoramic viewpoint peaks. Perfect for peaceful retreats, aromatic estate walks, and authentic homestay experiences.',
-    image: '/src/assets/images/dest_coorg_hills_1792168395678.jpg',
-    gallery: [
-      '/src/assets/images/dest_coorg_hills_1792168395678.jpg',
-      '/src/assets/images/hero_scenic_travel_1792168395100.jpg'
-    ],
+    image: DESTINATION_IMAGES['coorg'].primary,
+    fallbackImage: DESTINATION_IMAGES['coorg'].fallback,
+    gallery: DESTINATION_IMAGES['coorg'].gallery,
     categories: ['Mountains', 'Nature', 'Romantic', 'Weekend', 'Family-friendly'],
     indicativeBudgetPerPerson: 7500,
     suggestedDurationDays: 3,
@@ -121,11 +120,9 @@ export const DESTINATIONS: Destination[] = [
     region: 'South India',
     shortDescription: 'A surreal UNESCO World Heritage realm of 14th-century Vijayanagara granite temples and boulder-strewn rivers.',
     overview: 'Hampi transports travellers into a mystical world of monumental stone ruins, monolithic deities, ancient bazaars, and boulder landscapes set along the rushing Tungabhadra River. From sunrise atop Matanga Hill to cycling through royal enclosures, it is an unparalleled historical marvel.',
-    image: '/src/assets/images/dest_hampi_temple_1792168397178.jpg',
-    gallery: [
-      '/src/assets/images/dest_hampi_temple_1792168397178.jpg',
-      '/src/assets/images/hero_scenic_travel_1792168395100.jpg'
-    ],
+    image: DESTINATION_IMAGES['hampi'].primary,
+    fallbackImage: DESTINATION_IMAGES['hampi'].fallback,
+    gallery: DESTINATION_IMAGES['hampi'].gallery,
     categories: ['Historical', 'Adventure', 'Backpacking', 'Budget', 'Photography'],
     indicativeBudgetPerPerson: 5800,
     suggestedDurationDays: 3,
@@ -223,16 +220,14 @@ export const DESTINATIONS: Destination[] = [
   },
   {
     id: 'goa',
-    name: 'Goa',
+    name: 'South & North Goa',
     state: 'Goa',
     region: 'West India',
-    shortDescription: 'Golden sand coastlines, Portuguese-Latin quarters, oceanfront shacks, and sun-drenched coastal living.',
-    overview: 'Goa blends serene Konkan coastal beauty with rich Indo-Portuguese heritage. While North Goa pulses with vibrant markets, cafes, and water sports, South Goa offers sleepy palm-fringed coves, historic churches of Old Goa, and luxury beachfront retreats.',
-    image: '/src/assets/images/dest_goa_beach_1792168396756.jpg',
-    gallery: [
-      '/src/assets/images/dest_goa_beach_1792168396756.jpg',
-      '/src/assets/images/hero_scenic_travel_1792168395100.jpg'
-    ],
+    shortDescription: 'Sun-drenched golden coastlines, Portuguese colonial villas, serene backwaters, and vibrant coastal shacks.',
+    overview: 'Beyond the vibrant nightlife lies Goa’s soulful side: pristine southern shores like Palolem and Agonda, centuries-old Portuguese churches of Old Goa, lush spice farms, and tranquil mangrove kayak trails.',
+    image: DESTINATION_IMAGES['goa'].primary,
+    fallbackImage: DESTINATION_IMAGES['goa'].fallback,
+    gallery: DESTINATION_IMAGES['goa'].gallery,
     categories: ['Beaches', 'Relaxation', 'Food & Culture', 'Weekend', 'Romantic'],
     indicativeBudgetPerPerson: 8500,
     suggestedDurationDays: 4,
@@ -339,13 +334,11 @@ export const DESTINATIONS: Destination[] = [
     name: 'Jaipur',
     state: 'Rajasthan',
     region: 'North India',
-    shortDescription: 'The royal Pink City of regal hill forts, gem-encrusted palaces, bustling bazaars, and opulent Rajasthani culture.',
-    overview: 'Founded in 1727 by Maharaja Sawai Jai Singh II, Jaipur is a planned architectural masterpiece draped in distinctive terracotta-pink hues. From the majestic Amber Fort reflecting in Maota Lake to the astronomical precision of Jantar Mantar and vibrant craft bazaars, it is an essential cultural stop.',
-    image: '/src/assets/images/dest_jaipur_palace_1792168419389.jpg',
-    gallery: [
-      '/src/assets/images/dest_jaipur_palace_1792168419389.jpg',
-      '/src/assets/images/hero_scenic_travel_1792168395100.jpg'
-    ],
+    shortDescription: 'The royal Pink City of majestic hilltop forts, vibrant bazaars, and Rajput architectural grandeur.',
+    overview: 'Founded in 1727, Jaipur is a living celebration of royal Rajasthani heritage. Home to the honeycomb facade of Hawa Mahal, the formidable ramparts of Amber Fort, astronomical wonders of Jantar Mantar, and bustling bazaars brimming with textiles and jewelry.',
+    image: DESTINATION_IMAGES['jaipur'].primary,
+    fallbackImage: DESTINATION_IMAGES['jaipur'].fallback,
+    gallery: DESTINATION_IMAGES['jaipur'].gallery,
     categories: ['Historical', 'Food & Culture', 'Photography', 'Family-friendly', 'Romantic'],
     indicativeBudgetPerPerson: 7200,
     suggestedDurationDays: 3,
@@ -453,13 +446,11 @@ export const DESTINATIONS: Destination[] = [
     name: 'Munnar',
     state: 'Kerala',
     region: 'South India',
-    shortDescription: 'Rolling emerald tea slopes, misty mountain passes, rare flora, and cool Western Ghats serenity.',
-    overview: 'Located at the confluence of three mountain streams (Mudrapuzha, Nallathanni, and Kundala), Munnar is Kerala’s premier hill station. Characterized by manicured tea estates carpeting every hillside, endangered Nilgiri Tahr sightings in Eravikulam, and cool alpine air.',
-    image: '/src/assets/images/dest_munnar_tea_1792168420382.jpg',
-    gallery: [
-      '/src/assets/images/dest_munnar_tea_1792168420382.jpg',
-      '/src/assets/images/hero_scenic_travel_1792168395100.jpg'
-    ],
+    shortDescription: 'Endless rolling emerald tea plantations, cool mountain mist, and Nilgiri Tahr sanctuaries.',
+    overview: 'Perched at 1,600 meters in Kerala’s Western Ghats, Munnar captivates with sweeping green valleys draped in manicured tea gardens, cool mountain breezes, endangered Nilgiri Tahr at Eravikulam, and tranquil mountain lakes.',
+    image: DESTINATION_IMAGES['munnar'].primary,
+    fallbackImage: DESTINATION_IMAGES['munnar'].fallback,
+    gallery: DESTINATION_IMAGES['munnar'].gallery,
     categories: ['Mountains', 'Nature', 'Romantic', 'Weekend', 'Family-friendly'],
     indicativeBudgetPerPerson: 7000,
     suggestedDurationDays: 3,
@@ -566,13 +557,11 @@ export const DESTINATIONS: Destination[] = [
     name: 'Meghalaya (Shillong & Cherrapunji)',
     state: 'Meghalaya',
     region: 'East & North-East India',
-    shortDescription: 'The Abode of the Clouds: ancient living root bridges, turquoise natural pools, and dramatic canyon waterfalls.',
-    overview: 'Meghalaya offers one of Earth’s most wondrous landscapes. From the bio-engineered living root bridges woven over centuries by the Khasi people to the crystal-clear waters of Dawki and the thundering Nohkalikai Falls plunging into deep gorges, Meghalaya is paradise for nature lovers.',
-    image: '/src/assets/images/dest_meghalaya_falls_1792168421681.jpg',
-    gallery: [
-      '/src/assets/images/dest_meghalaya_falls_1792168421681.jpg',
-      '/src/assets/images/hero_scenic_travel_1792168395100.jpg'
-    ],
+    shortDescription: 'The Abode of Clouds featuring living root bridges, plunging waterfalls, and crystal-clear river canyons.',
+    overview: 'Meghalaya is nature at its most raw and poetic. Walk across centuries-old living root bridges hand-woven by the Khasi people, swim in the glass-clear waters of Umngot River in Dawki, and marvel at the roar of Nohkalikai Falls plunging into deep emerald pools.',
+    image: DESTINATION_IMAGES['meghalaya'].primary,
+    fallbackImage: DESTINATION_IMAGES['meghalaya'].fallback,
+    gallery: DESTINATION_IMAGES['meghalaya'].gallery,
     categories: ['Nature', 'Adventure', 'Hidden gems', 'Photography', 'Mountains'],
     indicativeBudgetPerPerson: 9200,
     suggestedDurationDays: 5,
@@ -678,13 +667,11 @@ export const DESTINATIONS: Destination[] = [
     name: 'Gokarna',
     state: 'Karnataka',
     region: 'South India',
-    shortDescription: 'Peaceful crescent beaches, scenic headland hiking trails, cliffside shacks, and sacred temple roots.',
-    overview: 'Gokarna is the slower, more soulful coastal escape of South India. Nestled where the rocky cliffs of the Western Ghats tumble into the turquoise Arabian Sea, it offers a legendary five-beach cliff trek (Kudle, Om, Half Moon, Paradise, and Main Beach) alongside centuries-old Mahabaleshwar spirituality.',
-    image: '/src/assets/images/dest_gokarna_coast_1792168420477.jpg',
-    gallery: [
-      '/src/assets/images/dest_gokarna_coast_1792168420477.jpg',
-      '/src/assets/images/dest_goa_beach_1792168396756.jpg'
-    ],
+    shortDescription: 'Soulful pilgrimage town meeting secluded cliffside beaches and tranquil Arabian Sea horizons.',
+    overview: 'An idyllic coastal haven where ancient Shiva temples meet untouched crescent beaches. Trek from Kudle to Om Beach, Half Moon, and Paradise Beach across coastal headlands with panoramic Arabian Sea sunsets.',
+    image: DESTINATION_IMAGES['gokarna'].primary,
+    fallbackImage: DESTINATION_IMAGES['gokarna'].fallback,
+    gallery: DESTINATION_IMAGES['gokarna'].gallery,
     categories: ['Beaches', 'Adventure', 'Backpacking', 'Budget', 'Nature'],
     indicativeBudgetPerPerson: 5200,
     suggestedDurationDays: 3,
@@ -791,13 +778,11 @@ export const DESTINATIONS: Destination[] = [
     name: 'Chikmagalur',
     state: 'Karnataka',
     region: 'South India',
-    shortDescription: 'The birthplace of Indian coffee, crowned by Mullayanagiri peak, aromatic plantations, and rolling ridges.',
-    overview: 'Chikmagalur is where Baba Budan first planted seven coffee beans brought from Yemen in 1670. Today, it is Karnataka’s beloved coffee highland, renowned for trekking up Karnataka’s highest peak (Mullayanagiri at 1,930m), serene waterfalls like Hebbe and Jhari, and cozy plantation homestays.',
-    image: '/src/assets/images/dest_coorg_hills_1792168395678.jpg',
-    gallery: [
-      '/src/assets/images/dest_coorg_hills_1792168395678.jpg',
-      '/src/assets/images/hero_scenic_travel_1792168395100.jpg'
-    ],
+    shortDescription: 'The birthplace of Indian coffee, featuring rugged Western Ghats summits and forest trails.',
+    overview: 'Surrounded by the highest peaks of Karnataka including Mullayanagiri and Baba Budangiri, Chikmagalur is a paradise of high-altitude coffee plantations, cascading forest waterfalls like Hebbe and Jhari, and cool mountain weather.',
+    image: DESTINATION_IMAGES['chikmagalur'].primary,
+    fallbackImage: DESTINATION_IMAGES['chikmagalur'].fallback,
+    gallery: DESTINATION_IMAGES['chikmagalur'].gallery,
     categories: ['Mountains', 'Nature', 'Weekend', 'Adventure', 'Budget'],
     indicativeBudgetPerPerson: 6800,
     suggestedDurationDays: 3,
@@ -899,13 +884,11 @@ export const DESTINATIONS: Destination[] = [
     name: 'Wayanad',
     state: 'Kerala',
     region: 'South India',
-    shortDescription: 'Pristine spice hills, prehistoric Edakkal rock caves, treehouses, and tranquil freshwater lakes.',
-    overview: 'Perched on the southern tip of the Deccan plateau in north-eastern Kerala, Wayanad is renowned for its mist-cloaked spice groves, ancient neolithic petroglyphs at Edakkal, Banasura Sagar (India’s largest earthen dam), and dense wildlife reserves.',
-    image: '/src/assets/images/dest_munnar_tea_1792168420382.jpg',
-    gallery: [
-      '/src/assets/images/dest_munnar_tea_1792168420382.jpg',
-      '/src/assets/images/hero_scenic_travel_1792168395100.jpg'
-    ],
+    shortDescription: 'Misty mountain forests, Neolithic rock engravings, wildlife sanctuaries, and spice estates.',
+    overview: 'Set amidst Kerala’s Nilgiri biosphere reserve, Wayanad offers ancient mysteries at Edakkal Caves, heart-shaped lakes atop Chembra Peak, bamboo rafting on Kuruva Island, and wild elephant sightings in Tholpetty.',
+    image: DESTINATION_IMAGES['wayanad'].primary,
+    fallbackImage: DESTINATION_IMAGES['wayanad'].fallback,
+    gallery: DESTINATION_IMAGES['wayanad'].gallery,
     categories: ['Nature', 'Adventure', 'Family-friendly', 'Mountains', 'Weekend'],
     indicativeBudgetPerPerson: 7100,
     suggestedDurationDays: 3,
@@ -998,13 +981,11 @@ export const DESTINATIONS: Destination[] = [
     name: 'Ooty (Udhagamandalam)',
     state: 'Tamil Nadu',
     region: 'South India',
-    shortDescription: 'The Queen of Hill Stations: heritage toy train, eucalyptus forests, botanical gardens, and cool Nilgiri air.',
-    overview: 'Established as the summer capital of the Madras Presidency in the early 19th century, Ooty charms travellers with its UNESCO World Heritage Nilgiri Mountain Railway, manicured Botanical and Rose Gardens, boat-filled lakes, and misty Toda tribal heritage.',
-    image: '/src/assets/images/dest_munnar_tea_1792168420382.jpg',
-    gallery: [
-      '/src/assets/images/dest_munnar_tea_1792168420382.jpg',
-      '/src/assets/images/hero_scenic_travel_1792168395100.jpg'
-    ],
+    shortDescription: 'Queen of the Nilgiri Hill Stations with heritage mountain railways, botanical gardens, and pine lakes.',
+    overview: 'Nestled in the blue Nilgiri Mountains, Ooty offers historic colonial charm, the UNESCO Nilgiri Mountain Railway toy train, aromatic eucalyptus groves, lush tea factories, and panoramic views from Doddabetta Peak.',
+    image: DESTINATION_IMAGES['ooty'].primary,
+    fallbackImage: DESTINATION_IMAGES['ooty'].fallback,
+    gallery: DESTINATION_IMAGES['ooty'].gallery,
     categories: ['Mountains', 'Family-friendly', 'Romantic', 'Weekend', 'Nature'],
     indicativeBudgetPerPerson: 7400,
     suggestedDurationDays: 3,
@@ -1095,15 +1076,13 @@ export const DESTINATIONS: Destination[] = [
   {
     id: 'pondicherry',
     name: 'Pondicherry (Puducherry)',
-    state: 'Puducherry',
+    state: 'Tamil Nadu',
     region: 'South India',
-    shortDescription: 'French colonial boulevards, mustard-yellow villas, spiritual ashrams, and seaside promenade charm.',
-    overview: 'Pondicherry exudes a distinct Franco-Tamil character. Known for its French Quarter (White Town) lined with bougainvillea-draped heritage buildings, the spiritual haven of Sri Aurobindo Ashram, the experimental universal township of Auroville, and tranquil beaches.',
-    image: '/src/assets/images/dest_goa_beach_1792168396756.jpg',
-    gallery: [
-      '/src/assets/images/dest_goa_beach_1792168396756.jpg',
-      '/src/assets/images/hero_scenic_travel_1792168395100.jpg'
-    ],
+    shortDescription: 'French colonial quarters with pastel yellow villas, tranquil beaches, and experimental township culture.',
+    overview: 'A coastal retreat blending French heritage with Tamil culture. Stroll through the cobblestone streets of White Town lined with bougainvillea, cycle along the Seaside Promenade, and find mindfulness at Auroville.',
+    image: DESTINATION_IMAGES['pondicherry'].primary,
+    fallbackImage: DESTINATION_IMAGES['pondicherry'].fallback,
+    gallery: DESTINATION_IMAGES['pondicherry'].gallery,
     categories: ['Romantic', 'Food & Culture', 'Relaxation', 'Weekend', 'Beaches'],
     indicativeBudgetPerPerson: 6500,
     suggestedDurationDays: 3,
@@ -1197,13 +1176,11 @@ export const DESTINATIONS: Destination[] = [
     name: 'Rishikesh',
     state: 'Uttarakhand',
     region: 'North India',
-    shortDescription: 'The Yoga Capital of the World: emerald Ganga river rapids, Himalayan foothills, and evening aartis.',
-    overview: 'Where the sacred Ganges emerges from the Himalayan valleys into the northern plains, Rishikesh balances high-adrenaline adventure (whitewater rafting, bungee jumping, cliff camping) with deep spiritual introspection, yoga ashrams, and magical evening Ganga aartis at Triveni and Parmarth Niketan.',
-    image: '/src/assets/images/gem_himalayan_valley_1792168397092.jpg',
-    gallery: [
-      '/src/assets/images/gem_himalayan_valley_1792168397092.jpg',
-      '/src/assets/images/hero_scenic_travel_1792168395100.jpg'
-    ],
+    shortDescription: 'Yoga capital of the world and adrenaline hub along the sacred, emerald green Ganges River.',
+    overview: 'Where the holy Ganges rushes out of the Himalayas into the plains. Rishikesh balances spiritual serene evening Ganga aartis at Parmarth Niketan with white-water river rafting, bungee jumping, and cliff camping.',
+    image: DESTINATION_IMAGES['rishikesh'].primary,
+    fallbackImage: DESTINATION_IMAGES['rishikesh'].fallback,
+    gallery: DESTINATION_IMAGES['rishikesh'].gallery,
     categories: ['Adventure', 'Nature', 'Historical', 'Backpacking', 'Budget'],
     indicativeBudgetPerPerson: 5900,
     suggestedDurationDays: 3,
@@ -1294,10 +1271,10 @@ export const DESTINATIONS: Destination[] = [
 ];
 
 export const TRAVEL_MOODS = [
-  { id: 'Beaches', title: 'Sun & Coastal', count: '18 Escapes', image: '/src/assets/images/dest_goa_beach_1792168396756.jpg' },
-  { id: 'Mountains', title: 'Mountain Peaks', count: '24 Retreats', image: '/src/assets/images/dest_coorg_hills_1792168395678.jpg' },
-  { id: 'Historical', title: 'Heritage & Forts', count: '15 Wonders', image: '/src/assets/images/dest_hampi_temple_1792168397178.jpg' },
-  { id: 'Nature', title: 'Forests & Falls', count: '21 Sanctuaries', image: '/src/assets/images/dest_meghalaya_falls_1792168421681.jpg' },
-  { id: 'Adventure', title: 'Thrill & Treks', count: '14 Trails', image: '/src/assets/images/gem_himalayan_valley_1792168397092.jpg' },
-  { id: 'Weekend', title: 'Quick Getaways', count: '19 Breaks', image: '/src/assets/images/dest_gokarna_coast_1792168420477.jpg' }
+  { id: 'Beaches', title: 'Sun & Coastal', count: '18 Escapes', image: TRAVEL_MOOD_IMAGES.Beaches.primary, fallbackImage: TRAVEL_MOOD_IMAGES.Beaches.fallback },
+  { id: 'Mountains', title: 'Mountain Peaks', count: '24 Retreats', image: TRAVEL_MOOD_IMAGES.Mountains.primary, fallbackImage: TRAVEL_MOOD_IMAGES.Mountains.fallback },
+  { id: 'Historical', title: 'Heritage & Forts', count: '15 Wonders', image: TRAVEL_MOOD_IMAGES.Historical.primary, fallbackImage: TRAVEL_MOOD_IMAGES.Historical.fallback },
+  { id: 'Nature', title: 'Forests & Falls', count: '21 Sanctuaries', image: TRAVEL_MOOD_IMAGES.Nature.primary, fallbackImage: TRAVEL_MOOD_IMAGES.Nature.fallback },
+  { id: 'Adventure', title: 'Thrill & Treks', count: '14 Trails', image: TRAVEL_MOOD_IMAGES.Adventure.primary, fallbackImage: TRAVEL_MOOD_IMAGES.Adventure.fallback },
+  { id: 'Weekend', title: 'Quick Getaways', count: '19 Breaks', image: TRAVEL_MOOD_IMAGES.Weekend.primary, fallbackImage: TRAVEL_MOOD_IMAGES.Weekend.fallback }
 ];

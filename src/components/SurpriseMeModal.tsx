@@ -200,7 +200,8 @@ export const SurpriseMeModal: React.FC<SurpriseMeModalProps> = ({ isOpen, onClos
               <div className="relative rounded-xl overflow-hidden aspect-video border border-[#EAE5DC]">
                 <ImageWithFallback
                   src={result.image}
-                  alt={result.name}
+                  fallbackSrc={result.fallbackImage}
+                  alt={`${result.name}, ${result.state}`}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />

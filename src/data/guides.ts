@@ -1,4 +1,5 @@
 import { TravelGuide } from '../types';
+import { GUIDE_IMAGES } from './destinationImages';
 
 export const TRAVEL_GUIDES: TravelGuide[] = [
   {
@@ -10,7 +11,8 @@ export const TRAVEL_GUIDES: TravelGuide[] = [
     author: 'Rohan Sharma, Travel Writer',
     publishDate: 'Updated Oct 2026',
     summary: 'Travel across India doesn’t need deep pockets. With sleeper trains, local homestays, community thalis, and state transport buses, you can explore richer cultures for a fraction of commercial tour costs.',
-    coverImage: '/src/assets/images/dest_hampi_temple_1792168397178.jpg',
+    coverImage: GUIDE_IMAGES['budget-travel-india'].primary,
+    fallbackImage: GUIDE_IMAGES['budget-travel-india'].fallback,
     sections: [
       {
         heading: 'Mastering the Indian Railways Network',
@@ -44,7 +46,8 @@ export const TRAVEL_GUIDES: TravelGuide[] = [
     author: 'Ananya Rao, TripBuddy Curator',
     publishDate: 'Oct 2026',
     summary: 'Need a fast break from the city? Here are tested 2-day itineraries from Bengaluru, Chennai, and Kochi that maximize mountain vistas and coastal tranquility.',
-    coverImage: '/src/assets/images/dest_coorg_hills_1792168395678.jpg',
+    coverImage: GUIDE_IMAGES['western-ghats-weekend'].primary,
+    fallbackImage: GUIDE_IMAGES['western-ghats-weekend'].fallback,
     sections: [
       {
         heading: 'The Bengaluru to Chikmagalur / Coorg Ridge Route',
@@ -70,7 +73,8 @@ export const TRAVEL_GUIDES: TravelGuide[] = [
     author: 'Vikram Joshi, Outdoor Instructor',
     publishDate: 'Sep 2026',
     summary: 'A minimalist packing philosophy tailored to Indian weather swings, religious site etiquette, and adventure needs.',
-    coverImage: '/src/assets/images/gem_himalayan_valley_1792168397092.jpg',
+    coverImage: GUIDE_IMAGES['packing-checklist-india'].primary,
+    fallbackImage: GUIDE_IMAGES['packing-checklist-india'].fallback,
     sections: [
       {
         heading: 'Apparel & Etiquette Essentials',
@@ -102,7 +106,8 @@ export const TRAVEL_GUIDES: TravelGuide[] = [
     author: 'TripBuddy Editorial Team',
     publishDate: 'Aug 2026',
     summary: 'Overtourism and plastic pollution threaten our most sacred valleys and beaches. Small conscious choices make your journey a blessing rather than a burden to local communities.',
-    coverImage: '/src/assets/images/dest_meghalaya_falls_1792168421681.jpg',
+    coverImage: GUIDE_IMAGES['responsible-tourism'].primary,
+    fallbackImage: GUIDE_IMAGES['responsible-tourism'].fallback,
     sections: [
       {
         heading: 'Zero Single-Use Plastic in Mountain Watersheds',

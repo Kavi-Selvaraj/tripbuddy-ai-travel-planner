@@ -22,6 +22,7 @@ import {
 import { DESTINATIONS, TRAVEL_MOODS } from '../data/destinations';
 import { HIDDEN_GEMS } from '../data/hiddenGems';
 import { TRAVEL_GUIDES } from '../data/guides';
+import { HERO_IMAGE } from '../data/destinationImages';
 import { useTravel } from '../context/TravelContext';
 import { ImageWithFallback } from '../components/ImageWithFallback';
 import { SurpriseMeModal } from '../components/SurpriseMeModal';
@@ -59,8 +60,10 @@ export const Home: React.FC = () => {
         {/* Background visual asset */}
         <div className="absolute inset-0 z-0">
           <ImageWithFallback
-            src="/src/assets/images/hero_scenic_travel_1792168395100.jpg"
-            alt="Scenic mountain valley in India with backpacker"
+            src={HERO_IMAGE.primary}
+            fallbackSrc={HERO_IMAGE.fallback}
+            priority={true}
+            alt={HERO_IMAGE.alt}
             className="w-full h-full object-cover object-center"
           />
           {/* Measured scrim for legibility without slop gradients */}
@@ -271,7 +274,8 @@ export const Home: React.FC = () => {
               <div className="relative aspect-4/3 overflow-hidden bg-[#EAE5DC]">
                 <ImageWithFallback
                   src={dest.image}
-                  alt={dest.name}
+                  fallbackSrc={dest.fallbackImage}
+                  alt={`${dest.name}, ${dest.state}`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <button
@@ -359,6 +363,7 @@ export const Home: React.FC = () => {
               >
                 <ImageWithFallback
                   src={mood.image}
+                  fallbackSrc={mood.fallbackImage}
                   alt={mood.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -602,7 +607,8 @@ export const Home: React.FC = () => {
                 <div className="relative aspect-16/10 overflow-hidden bg-black/40">
                   <ImageWithFallback
                     src={gem.image}
-                    alt={gem.name}
+                    fallbackSrc={gem.fallbackImage}
+                    alt={`${gem.name}, ${gem.state}`}
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-xs text-[11px] font-medium text-white">
@@ -813,6 +819,7 @@ export const Home: React.FC = () => {
               <div className="aspect-16/10 overflow-hidden bg-[#EAE5DC]">
                 <ImageWithFallback
                   src={guide.coverImage}
+                  fallbackSrc={guide.fallbackImage}
                   alt={guide.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />

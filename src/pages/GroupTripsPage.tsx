@@ -17,6 +17,8 @@ import {
 } from 'lucide-react';
 import { useTravel } from '../context/TravelContext';
 import { GroupTrip, VotingOption, GroupExpenseItem } from '../types';
+import { DESTINATIONS } from '../data/destinations';
+import { ImageWithFallback } from '../components/ImageWithFallback';
 
 export const GroupTripsPage: React.FC = () => {
   const { 
@@ -161,20 +163,39 @@ export const GroupTripsPage: React.FC = () => {
             {/* Group Header Card */}
             <div className="bg-white border border-[#EAE5DC] rounded-3xl p-6 sm:p-8 shadow-xs space-y-6">
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-[#F0ECE4]">
-                <div>
-                  <div className="flex items-center gap-2 text-xs text-[#64748B] mb-1">
-                    <MapPin className="w-3.5 h-3.5 text-[#1E4D3A]" />
-                    <span>{currentTrip.destination}</span>
-                    <span>·</span>
-                    <Calendar className="w-3.5 h-3.5 text-[#1E4D3A]" />
-                    <span>{currentTrip.dates}</span>
-                    <span>·</span>
-                    <Users className="w-3.5 h-3.5 text-[#1E4D3A]" />
-                    <span>{currentTrip.members.length} Members ({currentTrip.groupSize} Cap)</span>
+                <div className="flex items-center gap-4">
+                  {(() => {
+                    const tripDest = DESTINATIONS.find(d => 
+                      currentTrip.destination.toLowerCase().includes(d.id.toLowerCase()) || 
+                      currentTrip.destination.toLowerCase().includes(d.name.toLowerCase().split(' ')[0].toLowerCase())
+                    );
+                    if (!tripDest) return null;
+                    return (
+                      <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden shrink-0 border border-[#EAE5DC] shadow-xs bg-[#EAE5DC]">
+                        <ImageWithFallback
+                          src={tripDest.image}
+                          fallbackSrc={tripDest.fallbackImage}
+                          alt={tripDest.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    );
+                  })()}
+                  <div>
+                    <div className="flex items-center gap-2 text-xs text-[#64748B] mb-1">
+                      <MapPin className="w-3.5 h-3.5 text-[#1E4D3A]" />
+                      <span>{currentTrip.destination}</span>
+                      <span>·</span>
+                      <Calendar className="w-3.5 h-3.5 text-[#1E4D3A]" />
+                      <span>{currentTrip.dates}</span>
+                      <span>·</span>
+                      <Users className="w-3.5 h-3.5 text-[#1E4D3A]" />
+                      <span>{currentTrip.members.length} Members ({currentTrip.groupSize} Cap)</span>
+                    </div>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-[#1E2923]">
+                      {currentTrip.tripName}
+                    </h2>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold font-display text-[#1E2923]">
-                    {currentTrip.tripName}
-                  </h2>
                 </div>
 
                 {/* Invite Code & Share button */}

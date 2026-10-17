@@ -88,6 +88,7 @@ export interface Destination {
   nearbyDestinations: string[];
   rating: number;
   reviewCount: number;
+  fallbackImage?: string;
 }
 
 export interface HiddenGem {
@@ -97,6 +98,7 @@ export interface HiddenGem {
   state: string;
   region: 'South India' | 'North India' | 'West India' | 'East & North-East India';
   image: string;
+  fallbackImage?: string;
   whyVisit: string;
   estimatedBudget: number;
   suggestedDuration: string;
@@ -211,6 +213,7 @@ export interface TravelGuide {
   publishDate: string;
   summary: string;
   coverImage?: string;
+  fallbackImage?: string;
   sections: {
     heading: string;
     content: string;

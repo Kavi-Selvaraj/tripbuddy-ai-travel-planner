@@ -140,7 +140,8 @@ export const WeatherPage: React.FC = () => {
                 <div className="relative aspect-16/10 overflow-hidden bg-[#EAE5DC]">
                   <ImageWithFallback
                     src={dest.image}
-                    alt={dest.name}
+                    fallbackSrc={dest.fallbackImage}
+                    alt={`${dest.name}, ${dest.state}`}
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-white/95 text-[#1E2923] text-xs font-bold tabular-nums shadow-xs">

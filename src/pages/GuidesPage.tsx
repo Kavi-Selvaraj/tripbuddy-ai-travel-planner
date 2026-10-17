@@ -61,6 +61,7 @@ export const GuidesPage: React.FC = () => {
               <div className="aspect-16/9 overflow-hidden bg-[#EAE5DC]">
                 <ImageWithFallback
                   src={guide.coverImage}
+                  fallbackSrc={guide.fallbackImage}
                   alt={guide.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />

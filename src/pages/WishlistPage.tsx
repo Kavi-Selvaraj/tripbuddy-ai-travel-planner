@@ -101,7 +101,8 @@ export const WishlistPage: React.FC = () => {
                     <div className="relative aspect-4/3 overflow-hidden bg-[#EAE5DC]">
                       <ImageWithFallback
                         src={dest.image}
-                        alt={dest.name}
+                        fallbackSrc={dest.fallbackImage}
+                        alt={`${dest.name}, ${dest.state}`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <button

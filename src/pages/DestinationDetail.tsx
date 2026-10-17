@@ -79,7 +79,9 @@ export const DestinationDetail: React.FC = () => {
       <section className="relative h-[420px] sm:h-[480px] lg:h-[540px] w-full overflow-hidden bg-black/60">
         <ImageWithFallback
           src={destination.image}
-          alt={destination.name}
+          fallbackSrc={destination.fallbackImage}
+          priority={true}
+          alt={`${destination.name}, ${destination.state} - Destination Landscape Cover`}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
@@ -207,6 +209,27 @@ export const DestinationDetail: React.FC = () => {
                       ))}
                     </div>
                   </div>
+
+                  {/* Destination Photo Gallery */}
+                  {destination.gallery && destination.gallery.length > 0 && (
+                    <div className="pt-4 border-t border-[#F0ECE4]">
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-[#64748B] mb-3">
+                        Photo Gallery ({destination.gallery.length} Scenic Perspectives)
+                      </h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        {destination.gallery.map((imgUrl, i) => (
+                          <div key={i} className="relative aspect-4/3 rounded-xl overflow-hidden border border-[#EAE5DC] bg-[#FAF8F5] shadow-xs">
+                            <ImageWithFallback
+                              src={imgUrl}
+                              fallbackSrc={destination.fallbackImage}
+                              alt={`${destination.name} landscape photo ${i + 1}`}
+                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Weather & Seasonal Climate Intelligence */}
