@@ -23,7 +23,7 @@ export const UNIVERSAL_FALLBACK_IMAGE = 'https://images.unsplash.com/photo-15067
 
 export const DESTINATION_IMAGES: Record<string, VerifiedImageConfig> = {
   coorg: {
-    primary: 'https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?auto=format&fit=crop&w=1200&q=80',
+    primary: '/images/coorg.jpg',
     fallback: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
     gallery: [
       'https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?auto=format&fit=crop&w=1200&q=80',
